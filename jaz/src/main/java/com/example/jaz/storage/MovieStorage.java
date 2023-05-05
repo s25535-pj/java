@@ -10,11 +10,11 @@ import java.util.List;
 public class MovieStorage {
 
     List<Movie> movieList;
-    public MovieStorage(List<Movie> movieList){
+    public MovieStorage(){
         this.movieList = List.of(
-                new Movie("1","W piochu i krzokach", MovieCategory.DRAMA),
-                new Movie("2", "Nie ciulej franco", MovieCategory.COMEDY),
-                new Movie("3", "Utopek: Dupno rajza", MovieCategory.ACTION)
+                new Movie(0,"W piochu i krzokach", MovieCategory.DRAMA),
+                new Movie(1, "Nie ciulej franco", MovieCategory.COMEDY),
+                new Movie(2, "Utopek: Dupno rajza", MovieCategory.ACTION)
         );
     }
 
@@ -22,12 +22,21 @@ public class MovieStorage {
         return movieList;
     }
 
-    public Movie getMovieById(String acrid) {
+    public Movie getMovieById(int id) {
         for (Movie movie : movieList) {
-            if (movie.getAcrId().equals(acrid)){
+            if (movie.getId() == id){
                 return movie;
             }
         }
         return null;
+    }
+
+    public Movie updateMovie(int id, Movie movie) {
+        //Update movie method
+        return movieList.get(id);
+    }
+
+    public void deleteMovie(int id) {
+        //Remove movie method
     }
 }

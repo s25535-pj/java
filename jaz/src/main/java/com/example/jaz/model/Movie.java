@@ -1,21 +1,18 @@
 package com.example.jaz.model;
 
-import org.springframework.stereotype.Service;
-
-
 public class Movie {
-    private String acrId;
+    private int id;
     private String title;
     private MovieCategory movieCategory;
 
-    public Movie(String acrId, String title, MovieCategory movieCategory) {
-        this.acrId = acrId;
+    public Movie(int id, String title, MovieCategory movieCategory) {
+        this.id = id;
         this.title = title;
         this.movieCategory = movieCategory;
     }
 
-    public String getAcrId() {
-        return acrId;
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -26,5 +23,3 @@ public class Movie {
         return movieCategory;
     }
 }
-
-
