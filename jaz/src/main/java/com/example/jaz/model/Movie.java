@@ -1,17 +1,31 @@
 package com.example.jaz.model;
 
-public class Movie {
-    private int id;
-    private String title;
-    private MovieCategory movieCategory;
+import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
-    public Movie(int id, String title, MovieCategory movieCategory) {
-        this.id = id;
-        this.title = title;
-        this.movieCategory = movieCategory;
+@Entity
+public class Movie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    @Enumerated(EnumType.STRING)
+    private Category category;
+    @NonNull
+    private boolean isAvailable;
+
+    public Movie() {
     }
 
-    public int getId() {
+    public Movie(Long id, String title, Category category) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.isAvailable = false;
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -19,7 +33,15 @@ public class Movie {
         return title;
     }
 
-    public MovieCategory getMovieCategory() {
-        return movieCategory;
+    public Category getCategory() {
+        return category;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }

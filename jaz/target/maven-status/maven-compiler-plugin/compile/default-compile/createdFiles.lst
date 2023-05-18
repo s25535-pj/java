@@ -1,1 +1,9 @@
+com\example\jaz\exceptions\CustomBadRequestException.class
+com\example\jaz\storage\MovieStorage.class
+com\example\jaz\model\Movie.class
+com\example\jaz\model\MovieCategory.class
+com\example\jaz\controller\AdviceController.class
+com\example\jaz\exceptions\CustomNotFoundException.class
+com\example\jaz\service\MovieService.class
+com\example\jaz\controller\MappingController.class
 com\example\jaz\MovieServiceApplication.class

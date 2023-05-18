@@ -1,1 +1,9 @@
-D:\---===IntrliJ Projekty ===----\jaz\src\main\java\com\example\jaz\MovieServiceApplication.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\service\MovieService.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\exceptions\CustomBadRequestException.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\controller\MappingController.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\MovieServiceApplication.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\storage\MovieStorage.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\model\Movie.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\controller\AdviceController.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\exceptions\CustomNotFoundException.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\model\MovieCategory.java

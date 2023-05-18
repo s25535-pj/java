@@ -1,7 +1,7 @@
 package com.example.jaz.storage;
 
+import com.example.jaz.model.Category;
 import com.example.jaz.model.Movie;
-import com.example.jaz.model.MovieCategory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,9 +12,9 @@ public class MovieStorage {
     List<Movie> movieList;
     public MovieStorage(){
         this.movieList = List.of(
-                new Movie(0,"W piochu i krzokach", MovieCategory.DRAMA),
-                new Movie(1, "Nie ciulej franco", MovieCategory.COMEDY),
-                new Movie(2, "Utopek: Dupno rajza", MovieCategory.ACTION)
+                new Movie(0L,"W piochu i krzokach", Category.DRAMA),
+                new Movie(1L, "Nie ciulej franco", Category.COMEDY),
+                new Movie(2L, "Utopek: Dupno rajza", Category.ACTION)
         );
     }
 
