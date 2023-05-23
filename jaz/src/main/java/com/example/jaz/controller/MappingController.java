@@ -30,24 +30,24 @@ public class MappingController {
         return ResponseEntity.ok(movieService.getMovieById(id));
     }
 
+    @GetMapping("/movies/{id}/true")
+    public ResponseEntity<Optional<Movie>> changeMovieAvailability(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(movieService.changeIsAvailableToTrue(id));
+    }
+
     @PostMapping("/movies")
     public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok(movieService.addNewMovie(movie));
     }
 
     @PutMapping("/movies/{id}")
-    public ResponseEntity<Optional<Movie>> updateMovie(@RequestBody Movie movie, @PathVariable("id") Long id) {
-        return ResponseEntity.ok(movieService.updateMovie(id, movie));
+    public ResponseEntity<Optional<Movie>> updateMovie(@RequestBody Movie updatedMovie, @PathVariable("id") Long id) {
+        return ResponseEntity.ok(movieService.updateMovie(id, updatedMovie));
     }
 
     @DeleteMapping("/movies/{id}")
     public ResponseEntity<Void> deleteMovie(@PathVariable("id") Long id) {
         movieService.deleteMovie(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/movies/{id}")
-    public ResponseEntity<Optional<Movie>> refreshIsAvailable(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(movieService.refreshIsAvailable(id));
     }
 }

@@ -41,11 +41,15 @@ public class MovieService {
         throw new CustomBadRequestException("Given data not valid");
     }
 
-    public Optional<Movie> updateMovie(Long id, Movie newMovie) {
-        Optional<Movie> oldMovie = movieRepository.findById(id);
-        if (oldMovie.isPresent()) {
-//            Optional<Movie> newMovie = oldMovie.get();
-
+    public Optional<Movie> updateMovie(Long id, Movie updatedMovie) {
+        Optional<Movie> optionalMovie = movieRepository.findById(id);
+        if (optionalMovie.isPresent()) {
+            Movie movie = optionalMovie.get();
+            movie.setTitle(updatedMovie.getTitle());
+            movie.setCategory(updatedMovie.getCategory());
+            movie.setAvailable(updatedMovie.isAvailable());
+            movieRepository.save(movie);
+            return movieRepository.findById(id);
         }
         throw new CustomNotFoundException("No movie with such id found");
     }
@@ -57,11 +61,11 @@ public class MovieService {
             throw new CustomNotFoundException("No movie with such id found");
         }
     }
-
-    public Optional<Movie> refreshIsAvailable(Long id) {
-        Optional<Movie> movie = movieRepository.findById(id);
-        if (movie.isPresent()) {
-            movie.get().setAvailable(true);
+    public Optional<Movie> changeIsAvailableToTrue(Long id) {
+        Optional<Movie> optionalMovie = movieRepository.findById(id);
+        if(optionalMovie.isPresent()) {
+            Movie movie = optionalMovie.get();
+            movie.setAvailable(true);
             movieRepository.save(movie);
             return movieRepository.findById(id);
         } else {
