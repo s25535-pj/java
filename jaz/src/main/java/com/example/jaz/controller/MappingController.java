@@ -20,6 +20,11 @@ public class MappingController {
         this.movieService = movieService;
     }
 
+    @GetMapping("/movies/test")
+    public ResponseEntity<String> testMessage()  {
+        return ResponseEntity.ok("test message from movie service");
+    }
+
     @GetMapping("/movies")
     public ResponseEntity<List<Movie>> returnMovieList()  {
         return ResponseEntity.ok(movieService.getMovieList());
@@ -30,9 +35,13 @@ public class MappingController {
         return ResponseEntity.ok(movieService.getMovieById(id));
     }
 
-    @GetMapping("/movies/{id}/true")
-    public ResponseEntity<Optional<Movie>> changeMovieAvailability(@PathVariable("id") Long id) {
+    @PutMapping("/movies/{id}/true")
+    public ResponseEntity<Optional<Movie>> changeMovieAvailabilityToTrue(@PathVariable("id") Long id) {
         return ResponseEntity.ok(movieService.changeIsAvailableToTrue(id));
+    }
+    @PutMapping("/movies/{id}/false")
+    public ResponseEntity<Optional<Movie>> changeMovieAvailabilityToFalse(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(movieService.changeIsAvailableToFalse(id));
     }
 
     @PostMapping("/movies")

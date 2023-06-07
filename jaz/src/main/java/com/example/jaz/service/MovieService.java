@@ -72,4 +72,16 @@ public class MovieService {
             throw new CustomNotFoundException("No movie with such id found");
         }
     }
+
+    public Optional<Movie> changeIsAvailableToFalse(Long id) {
+        Optional<Movie> optionalMovie = movieRepository.findById(id);
+        if(optionalMovie.isPresent()) {
+            Movie movie = optionalMovie.get();
+            movie.setAvailable(false);
+            movieRepository.save(movie);
+            return movieRepository.findById(id);
+        } else {
+            throw new CustomNotFoundException("No movie with such id found");
+        }
+    }
 }
