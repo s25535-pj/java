@@ -18,24 +18,30 @@ public class RentalController {
 
     @GetMapping("/rental/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok(restTemplate.getForObject(URI.create("http://localhost:8080/movies/test"), String.class));
+        return ResponseEntity.ok(restTemplate.getForObject(URI.create("http://localhost:8082/movies/test"), String.class));
     }
 
     @GetMapping("/rental/{id}")
     public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id) {
-        Movie movie = restTemplate.getForObject(URI.create("http://localhost:8080/movies/"+ id), Movie.class);
+        Movie movie = restTemplate.getForObject(URI.create("http://localhost:8082/movies/"+ id), Movie.class);
         return ResponseEntity.ok(movie);
+    }
+
+    @PostMapping("/rental")
+    public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie) {
+        ResponseEntity<Movie> response = restTemplate.postForEntity("http://localhost:8082/movies", movie, Movie.class);
+        return ResponseEntity.ok(response.getBody());
     }
 
     @PutMapping("/rental/{id}/true")
     public ResponseEntity<Void> returnMovie(@PathVariable("id") Long id) {
-        restTemplate.put(URI.create("http://localhost:8080/movies/"+ id + "/true"), Movie.class);
+        restTemplate.put(URI.create("http://localhost:8082/movies/"+ id + "/true"), Movie.class);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/rental/{id}/false")
     public ResponseEntity<Void> rentMovie(@PathVariable("id") Long id) {
-        restTemplate.put(URI.create("http://localhost:8080/movies/"+ id + "/false"), Movie.class);
+        restTemplate.put(URI.create("http://localhost:8082/movies/"+ id + "/false"), Movie.class);
         return ResponseEntity.ok().build();
     }
 }
