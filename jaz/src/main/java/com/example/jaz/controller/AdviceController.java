@@ -3,6 +3,8 @@ package com.example.jaz.controller;
 import com.example.jaz.exceptions.CustomBadRequestException;
 import com.example.jaz.exceptions.CustomConnectException;
 import com.example.jaz.exceptions.CustomNotFoundException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.net.ConnectException;
 
 @RestControllerAdvice
+
 public class AdviceController extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CustomNotFoundException.class)

@@ -1,3 +1,5 @@
+D:\repositories\java\jaz\src\main\java\com\example\jaz\storage\MovieRepository.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\model\Category.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\service\MovieService.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\exceptions\CustomBadRequestException.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\controller\MappingController.java
@@ -6,4 +8,4 @@ D:\repositories\java\jaz\src\main\java\com\example\jaz\storage\MovieStorage.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\model\Movie.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\controller\AdviceController.java
 D:\repositories\java\jaz\src\main\java\com\example\jaz\exceptions\CustomNotFoundException.java
-D:\repositories\java\jaz\src\main\java\com\example\jaz\model\MovieCategory.java
+D:\repositories\java\jaz\src\main\java\com\example\jaz\exceptions\CustomConnectException.java

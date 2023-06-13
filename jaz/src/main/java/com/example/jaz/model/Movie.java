@@ -1,5 +1,6 @@
 package com.example.jaz.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
 
@@ -8,11 +9,18 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "This is movie id", maxLength = 1000, minLength = 6)
     private Long id;
+
+    @Schema(description = "This is movie title", maxLength = 255, minLength = 3)
     private String title;
+
     @Enumerated(EnumType.STRING)
+    @Schema(description = "This is movie category", example = "ACTION")
+
     private Category category;
     @NonNull
+    @Schema(description = "This is if movie is avaliable")
     private boolean isAvailable;
 
     public Movie() {
