@@ -44,4 +44,16 @@ public class RentalController {
         restTemplate.put(URI.create("http://localhost:8082/movies/"+ id + "/false"), Movie.class);
         return ResponseEntity.ok().build();
     }
+
+//    get for entity zwraca response entity
+//    get for object zwraca objekt bez statusu http
+
+//    GET   pobieranie movie, zwraca dodany movie
+//    POST  dodawanie movie,
+//    PUT   zmienianie movie, zwraca zmieniony movie
+//    DELETE kasuje movie, nie zwraca nic
+
+//    @Override
+//    <S extends Movie> S save(S entity)  nie musimy uzywa na zajeciach
+//    
 }
