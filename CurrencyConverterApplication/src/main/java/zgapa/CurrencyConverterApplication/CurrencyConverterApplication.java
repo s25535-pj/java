@@ -8,6 +8,7 @@ public class CurrencyConverterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CurrencyConverterApplication.class, args);
+//		http://localhost:8081/swagger-ui/index.html
 	}
 
 }

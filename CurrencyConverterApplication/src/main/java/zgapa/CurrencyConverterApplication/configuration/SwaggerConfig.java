@@ -13,8 +13,8 @@ public class SwaggerConfig {
     @Bean
     OpenAPI openAPI() {
         Info info = new Info()
-                .title("Currency service rest api")
-                .description("Api that returns rate of choosen currency for set amount of days");
+                .title("Zwracałka średniej walut z ostatnich x dni")
+                .description("Opis zwracałki średniej walut z ostatnich x dni");
 
         return new OpenAPI().info(info);
     }

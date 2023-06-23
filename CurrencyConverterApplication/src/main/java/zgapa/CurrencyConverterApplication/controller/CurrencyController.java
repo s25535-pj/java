@@ -27,12 +27,16 @@ public class CurrencyController {
                     description = "Średnia zwórcona pomyślnie",
                     content = {@Content(schema = @Schema(implementation = CurrencyQuery.class), mediaType = "application/json")}),
 
+            @ApiResponse(responseCode = "400",
+                    description = "Błędne dane (prawdopodobnie błędna ilość dni)",
+                    content = {@Content()}),
+
             @ApiResponse(responseCode = "404",
-                    description = "Błędne dane, nie znaleziono",
+                    description = "Błędne dane, (prawdopodobnie błędna waluta)",
                     content = {@Content()}),
 
             @ApiResponse(responseCode = "504",
-                    description = "Server dostawcy zdech",
+                    description = "Server banku zdech",
                     content = {@Content()})
     })
 
